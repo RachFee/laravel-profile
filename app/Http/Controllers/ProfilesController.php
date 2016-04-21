@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -23,8 +24,8 @@ class ProfilesController extends Controller
 		//get users table
 		$users = DB::table('users')->get();
 		//pass users to view
-		//name "profiles" instead of "Users" to avoid any naming conflicts.
-		return view('profiles', ['users' => $users]);
+		//name "profiles" instead of "Users" to avoid any naming confusion
+		return view('profiles', ['users' => $users, 'id' => Auth::user()->id]);
 	}
 
     /**

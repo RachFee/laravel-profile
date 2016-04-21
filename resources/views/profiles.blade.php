@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<?php 
-$id = Auth::user()->id;
-?> 
 
 <!--base code taken from the home blade -->
 <div class="container">
