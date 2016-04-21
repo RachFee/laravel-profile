@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,7 +19,12 @@ class ProfilesController extends Controller
     {
         //This is the default GET behaviour when /profiles is accessed.
 		//This is where we should pull a list of profiles from the db. 
-		echo "hi";
+		
+		//get users table
+		$users = DB::table('users')->get();
+		//pass users to view
+		//name "profiles" instead of "Users" to avoid any naming conflicts.
+		return view('profiles', ['users' => $users]);
 	}
 
     /**
