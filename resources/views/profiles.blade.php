@@ -14,8 +14,8 @@
                     <!-- Header Section -->
                     <thead>
                         <th>Name</th>
-						<th>City</th>
-						<th>Twitter</th>
+						<th >City</th>
+						<th width="50%">Twitter</th>
 						<th>Github</th> 
 						<th>Role</th>
                     </thead>
@@ -34,7 +34,7 @@
 									@endif
 								</td>
 								<td class="table-text">{{ $user->city }}</td>
-								<td class="table-text">{{ $user->twitter }}</td>
+								<td class="table-text">{!! $user->twitter !!}</td> <!-- don't escape to support URLs -->
 								<td class="table-text">{{ $user->github }}</td> 
 								<td class="table-text">{{ $user->career_role }}</td>
                             </tr>
