@@ -33,7 +33,7 @@ $id = Auth::user()->id;
 										{{ $user->name }}
 									</a>
 									@if ($user->id == $id)
-										&nbsp;<span style="color:red; font-weight:bold"><- This is you!</span>
+										&nbsp;<span style="color:red; font-weight:bold">&lt;- This is you!</span>
 									@endif
 								</td>
 								<td class="table-text">{{ $user->city }}</td>
