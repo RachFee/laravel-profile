@@ -14,13 +14,12 @@
 //TODO: find a way to add a universal auth check so that user is ALWAYS kicked to login 
 
 Route::get('/', function () {
-    ///return view('welcome'); //-- original
 	
-	//kick the user to the login page if they aren't logged in. 
+	//kick the user to the login page if they aren't logged in. Otherwise, send them directly to /profiles
 	if (!Auth::check()){
 		return Redirect::guest('login');
-	}else{
-		return view('welcome');
+	 }else{
+		 return Redirect::guest('profiles');
 	}
 });
 
@@ -30,11 +29,11 @@ Route::get('/login', function(){
 });
 
 
-Route::auth();
+Route::auth(); 
 
 Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
-    // All my routes that needs a logged in user
+    // All routes that needs a logged in user
 	Route::get('/profiles', 'ProfilesController@index');
 });

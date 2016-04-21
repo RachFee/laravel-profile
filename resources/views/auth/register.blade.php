@@ -116,10 +116,10 @@
                             <label class="col-md-4 control-label">Career Role</label>
 
                             <div class="col-md-6">
-                                <input type="radio" name="career_role" id="developer" value="Developer"><label for="developer">Developer</label></br>
-                                <input type="radio" name="career_role" id="administrator" value="Administrator"><label for="administrator">Administrator</label></br>
-                                <input type="radio" name="career_role" id="sales" value="Sales"><label for="sales">Sales</label></br>  
-                                <input type="radio" name="career_role" id="other" value="Other"><label for="other">Other</label></br>								
+                                <input type="radio" name="career_role" id="developer" value="Developer" {{ old('career_role')=='Developer' ? 'checked="checked"' : '' }}><label for="developer">Developer</label></br>
+                                <input type="radio" name="career_role" id="administrator" value="Administrator" {{ old('career_role')=="Administrator" ? 'checked="checked"' : "" }}><label for="administrator">Administrator</label></br>
+                                <input type="radio" name="career_role" id="sales" value="Sales" {{ old('career_role')=="Sales" ? 'checked="checked"' : "" }}><label for="sales">Sales</label></br>  
+                                <input type="radio" name="career_role" id="other" value="Other" {{ old('career_role')=="Other" ? 'checked="checked"' : "" }}><label for="other">Other</label></br>								
 							 
 							    @if ($errors->has('career_role'))
                                     <span class="help-block">
