@@ -53,8 +53,8 @@ class AuthController extends Controller
             'email' 		=> 'required|email|max:255|unique:users',
             'password' 		=> 'required|min:6|confirmed',
 			'city' 			=> 'required|max:255', 
-			'twitter' 		=> 'required|max:255', 
-			'github' 		=> 'required|max:255', 
+			'twitter' 		=> 'max:15|regex:/^[\w]+$/', 
+			'github' 		=> 'max:32', 
 			'career_role' 	=> 'required|max:255'
         ]);
     }
