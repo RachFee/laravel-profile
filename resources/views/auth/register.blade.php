@@ -65,6 +65,69 @@
                                 @endif
                             </div>
                         </div>
+						
+						<!--text field accepting city--> 
+						<div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">City</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="city"  value="{{ old('city') }}">
+
+                                @if ($errors->has('city'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('city') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+						
+						<!--text field accepting twitter-->
+						<div class="form-group{{ $errors->has('twitter') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Twitter</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="twitter"  value="{{ old('twitter') }}">
+
+                                @if ($errors->has('twitter'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('twitter') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+						
+						<!--text field accepting github-->
+						<div class="form-group{{ $errors->has('github') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Github</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="github"  value="{{ old('github') }}">
+
+                                @if ($errors->has('github'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('github') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+						
+						<!--radio field acceting career role-->
+						<div class="form-group{{ $errors->has('career_role') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Career Role</label>
+
+                            <div class="col-md-6">
+                                <input type="radio" name="career_role" id="developer" value="Developer"><label for="developer">Developer</label></br>
+                                <input type="radio" name="career_role" id="administrator" value="Administrator"><label for="administrator">Administrator</label></br>
+                                <input type="radio" name="career_role" id="sales" value="Sales"><label for="sales">Sales</label></br>  
+                                <input type="radio" name="career_role" id="other" value="Other"><label for="other">Other</label></br>								
+							 
+							    @if ($errors->has('career_role'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('career_role') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
