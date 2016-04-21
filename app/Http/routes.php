@@ -25,10 +25,9 @@ Route::get('/', function () {
 });
 
 //add a nicer route for login instead of index.php?login
-//not sure this is neccessary
-/*Route::get('/login', function(){
+Route::get('/login', function(){
 	 return Redirect::guest('login');
-});*/
+});
 
 
 Route::auth();
